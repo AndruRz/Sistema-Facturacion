@@ -12,4 +12,4 @@ Para instalar las dependencias necesarias, sigue estos pasos:
    ```bash
    npm install
 
-**Para ejecutar el servidor, ejecuta "start-server", y dar click ya sea a uno de los dos links generados
+**Para ejecutar el servidor, ejecuta "start-server", y dar click ya sea a uno de los dos links generados**
