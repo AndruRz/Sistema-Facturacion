@@ -1,0 +1,2144 @@
+/* =================================
+   ESTILOS PARA SECCIÓN DE GESTIÓN
+   ================================= */
+
+/* Contenedor principal de gestión */
+.management-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+/* =================================
+   HEADER DE GESTIÓN (Similar a welcome-section)
+   ================================= */
+.management-header {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+.management-header h1 {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.management-header p {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* =================================
+   OPCIONES DE GESTIÓN
+   ================================= */
+.management-options {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+/* Botones de gestión */
+#btn-conocer-datos,
+#btn-exportar-datos,
+#btn-rentabilidad-productos,
+#btn-analisis-ventas,
+#btn-resumen-financiero {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 60px;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    color: white;
+}
+
+/* Colores específicos para cada botón */
+#btn-conocer-datos {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+#btn-conocer-datos::before {
+    content: '📊';
+    font-size: 1rem;
+    margin-right: 4px;
+}
+
+#btn-exportar-datos {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+#btn-exportar-datos::before {
+    content: '📤';
+    font-size: 1rem;
+    margin-right: 4px;
+}
+
+#btn-rentabilidad-productos {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+#btn-rentabilidad-productos::before {
+    content: '💰';
+    font-size: 1rem;
+    margin-right: 4px;
+}
+
+#btn-analisis-ventas {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+#btn-analisis-ventas::before {
+    content: '📈';
+    font-size: 1rem;
+    margin-right: 4px;
+}
+
+#btn-resumen-financiero {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+#btn-resumen-financiero::before {
+    content: '💼';
+    font-size: 1rem;
+    margin-right: 4px;
+}
+
+/* Estados hover para botones */
+#btn-conocer-datos:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+#btn-exportar-datos:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+#btn-rentabilidad-productos:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+#btn-analisis-ventas:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+#btn-resumen-financiero:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* =================================
+   ESTADÍSTICAS RÁPIDAS
+   ================================= */
+.quick-stats {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.quick-stats h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quick-stats h2::before {
+    content: '⚡';
+    font-size: 1.2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-card h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px 0;
+}
+
+.stat-card p {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Colores específicos para diferentes tipos de estadísticas */
+.stat-card:nth-child(1)::before { background: linear-gradient(90deg, #10b981, #059669); }
+.stat-card:nth-child(2)::before { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
+.stat-card:nth-child(3)::before { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+.stat-card:nth-child(4)::before { background: linear-gradient(90deg, #f59e0b, #d97706); }
+.stat-card:nth-child(5)::before { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.stat-card:nth-child(6)::before { background: linear-gradient(90deg, #6b7280, #4b5563); }
+.stat-card:nth-child(7)::before { background: linear-gradient(90deg, #ec4899, #db2777); }
+
+/* Valores específicos con colores */
+#daily-income,
+#monthly-income,
+#yearly-income {
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#invoices-issued {
+    color: #3b82f6;
+}
+
+#invoices-canceled {
+    color: #ef4444;
+}
+
+/* =================================
+   GRÁFICA DE TENDENCIAS
+   ================================= */
+.trends-chart {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    overflow: hidden; /* Evitar desbordamiento horizontal */
+}
+
+.trends-chart h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trends-chart h2::before {
+    content: '📈';
+    font-size: 1.2rem;
+}
+
+/* Contenedor responsive para el canvas */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#sales-trend-chart {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    display: block;
+}
+
+#sales-trend-chart p {
+    color: #6b7280;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* =================================
+   ALERTAS RÁPIDAS
+   ================================= */
+.quick-alerts {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #ef4444;
+}
+
+.quick-alerts h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #b91c1c;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quick-alerts h2::before {
+    content: '🚨';
+    font-size: 1.2rem;
+}
+
+#alerts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px; /* Altura máxima para mostrar ~5 elementos */
+    overflow-y: auto;
+    border-radius: 8px;
+    /* Estilos para el scrollbar personalizado */
+    scrollbar-width: thin;
+    scrollbar-color: #ef4444 #f3f4f6;
+}
+
+/* Scrollbar personalizado para webkit (Chrome, Safari, Edge) */
+#alerts-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#alerts-list::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+}
+
+#alerts-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-radius: 3px;
+}
+
+#alerts-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+
+#alerts-list li {
+    background: rgba(254, 242, 242, 0.7);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #ef4444;
+    color: #7f1d1d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#alerts-list li:hover {
+    background: rgba(254, 242, 242, 1);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+#alerts-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+    }
+    
+    .management-options {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .management-section {
+        padding: 0 4px;
+    }
+    
+        #alerts-list {
+        max-height: 250px; /* Menor altura en móviles */
+    }    
+
+    .management-header,
+    .management-options,
+    .quick-stats,
+    .trends-chart,
+    .quick-alerts {
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .management-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .stat-card {
+        padding: 16px;
+    }
+    
+    .stat-card p {
+        font-size: 1.5rem;
+    }
+    
+    .management-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    #btn-conocer-datos,
+    #btn-exportar-datos,
+    #btn-rentabilidad-productos,
+    #btn-analisis-ventas,
+    #btn-resumen-financiero {
+        min-height: 50px;
+        font-size: 0.85rem;
+        padding: 12px 20px;
+    }
+    
+    #sales-trend-chart {
+        min-height: 150px;
+        padding: 30px 15px;
+    }
+    
+    #alerts-list li {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card h3 {
+        font-size: 0.8rem;
+    }
+    
+    .stat-card p {
+        font-size: 1.25rem;
+    }
+    
+    .management-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .management-header p {
+        font-size: 0.9rem;
+    }
+    
+    .quick-stats h2,
+    .trends-chart h2,
+    .quick-alerts h2 {
+        font-size: 1.1rem;
+    }
+    
+    #btn-conocer-datos,
+    #btn-exportar-datos,
+    #btn-rentabilidad-productos,
+    #btn-analisis-ventas,
+    #btn-resumen-financiero {
+        min-height: 44px;
+        font-size: 0.8rem;
+        padding: 10px 16px;
+        border-radius: 10px;
+    }
+    
+    #btn-conocer-datos::before,
+    #btn-exportar-datos::before,
+    #btn-rentabilidad-productos::before,
+    #btn-analisis-ventas::before,
+    #btn-resumen-financiero::before {
+        font-size: 0.9rem;
+        margin-right: 2px;
+    }
+    
+    #sales-trend-chart {
+        min-height: 120px;
+        padding: 20px 10px;
+    }
+    
+    #sales-trend-chart p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estados deshabilitados */
+#btn-conocer-datos:disabled,
+#btn-exportar-datos:disabled,
+#btn-rentabilidad-productos:disabled,
+#btn-analisis-ventas:disabled,
+#btn-resumen-financiero:disabled {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+    color: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Estados de carga */
+#btn-conocer-datos.loading::before,
+#btn-exportar-datos.loading::before,
+#btn-rentabilidad-productos.loading::before,
+#btn-analisis-ventas.loading::before,
+#btn-resumen-financiero.loading::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+/* Efectos de ondas en click */
+#btn-conocer-datos::after,
+#btn-exportar-datos::after,
+#btn-rentabilidad-productos::after,
+#btn-analisis-ventas::after,
+#btn-resumen-financiero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    pointer-events: none;
+}
+
+#btn-conocer-datos:active::after,
+#btn-exportar-datos:active::after,
+#btn-rentabilidad-productos:active::after,
+#btn-analisis-ventas:active::after,
+#btn-resumen-financiero:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Animaciones */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Reducir animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    #btn-conocer-datos,
+    #btn-exportar-datos,
+    #btn-rentabilidad-productos,
+    #btn-analisis-ventas,
+    #btn-resumen-financiero {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    #btn-conocer-datos:hover,
+    #btn-exportar-datos:hover,
+    #btn-rentabilidad-productos:hover,
+    #btn-analisis-ventas:hover,
+    #btn-resumen-financiero:hover {
+        transform: none;
+    }
+    
+    .stat-card:hover {
+        transform: none;
+    }
+    
+    #alerts-list li:hover {
+        transform: none;
+    }
+
+    @media (max-width: 480px) {
+    #alerts-list {
+        max-height: 200px; /* Aún menor en pantallas pequeñas */
+    }
+}
+}
+
+@media (max-width: 1024px) {
+    .trends-chart {
+        padding: 20px;
+    }
+    
+    .chart-container {
+        height: 350px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .trends-chart {
+        padding: 16px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+    }
+    
+    .trends-chart h2 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+    
+    .trends-chart h2::before {
+        font-size: 1rem;
+    }
+    
+    .chart-container {
+        height: 280px;
+        margin: 0;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .trends-chart {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    
+    .trends-chart h2 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+        gap: 6px;
+        text-align: center;
+    }
+    
+    .trends-chart h2::before {
+        font-size: 0.9rem;
+    }
+    
+    .chart-container {
+        height: 240px;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .trends-chart {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .trends-chart h2 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .chart-container {
+        height: 220px;
+    }
+}
+
+/* Estados de error y carga */
+.chart-error,
+.chart-loading {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    border: 2px dashed #cbd5e1;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .chart-error,
+    .chart-loading {
+        padding: 30px 15px;
+        min-height: 150px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-error,
+    .chart-loading {
+        padding: 20px 10px;
+        min-height: 120px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+}
+
+/* Asegurar que Chart.js no cause overflow horizontal */
+.trends-chart canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Prevenir scroll horizontal en la página por culpa de la gráfica */
+.management-section {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* SECCIÓN CONOCER DATOS - DISEÑO PULIDO Y RESPONSIVE */
+.DATOS_SISTEMA_wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.DATOS_SISTEMA_header {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.DATOS_SISTEMA_header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.DATOS_SISTEMA_header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+.DATOS_SISTEMA_summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.DATOS_SISTEMA_card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.DATOS_SISTEMA_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.DATOS_SISTEMA_card:hover::before {
+    transform: scaleX(1);
+}
+
+.DATOS_SISTEMA_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Iconos principales - SIN gradientes que los tapen */
+.DATOS_SISTEMA_total-insights .DATOS_SISTEMA_icon,
+.DATOS_SISTEMA_income-insights .DATOS_SISTEMA_icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.DATOS_SISTEMA_info h3 {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.DATOS_SISTEMA_info p {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.DATOS_SISTEMA_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.DATOS_SISTEMA_card h3 {
+    font-size: 1rem;
+    color: #4a5568;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+/* Iconos del grid - SIN gradientes */
+.DATOS_SISTEMA_card .DATOS_SISTEMA_icon {
+    font-size: 1.4rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.DATOS_SISTEMA_card p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.DATOS_SISTEMA_analysis {
+    margin-top: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.DATOS_SISTEMA_analysis h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.DATOS_SISTEMA_analysis h2::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+}
+
+.DATOS_SISTEMA_charts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 25px;
+}
+
+.DATOS_SISTEMA_chart-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.DATOS_SISTEMA_chart-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.DATOS_SISTEMA_chart-card h3 {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.DATOS_SISTEMA_chart-card canvas {
+    width: 100%;
+    height: 220px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+/* RESPONSIVE DESIGN MEJORADO */
+@media (max-width: 768px) {
+    .DATOS_SISTEMA_wrapper {
+        width: 95%;
+        padding: 20px 12px;
+        margin: 10px auto;
+    }
+    
+    .DATOS_SISTEMA_header {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .DATOS_SISTEMA_header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .DATOS_SISTEMA_summary {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .DATOS_SISTEMA_card {
+        padding: 16px;
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .DATOS_SISTEMA_total-insights .DATOS_SISTEMA_icon,
+    .DATOS_SISTEMA_income-insights .DATOS_SISTEMA_icon {
+        font-size: 2rem;
+    }
+    
+    .DATOS_SISTEMA_info p {
+        font-size: 1.5rem;
+    }
+    
+    .DATOS_SISTEMA_grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin: 20px 0;
+    }
+    
+    .DATOS_SISTEMA_card h3 {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .DATOS_SISTEMA_card p {
+        font-size: 1.1rem;
+    }
+    
+    .DATOS_SISTEMA_analysis {
+        padding: 16px;
+        margin-top: 20px;
+    }
+    
+    .DATOS_SISTEMA_analysis h2 {
+        font-size: 1.3rem;
+    }
+    
+    .DATOS_SISTEMA_charts-wrapper {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .DATOS_SISTEMA_chart-card {
+        padding: 14px;
+    }
+    
+    .DATOS_SISTEMA_chart-card canvas {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .DATOS_SISTEMA_wrapper {
+        width: 98%;
+        padding: 15px 8px;
+    }
+    
+    .DATOS_SISTEMA_header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .DATOS_SISTEMA_card {
+        padding: 12px;
+    }
+    
+    .DATOS_SISTEMA_total-insights .DATOS_SISTEMA_icon,
+    .DATOS_SISTEMA_income-insights .DATOS_SISTEMA_icon {
+        font-size: 1.8rem;
+    }
+    
+    .DATOS_SISTEMA_info p {
+        font-size: 1.3rem;
+    }
+    
+    .DATOS_SISTEMA_grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .DATOS_SISTEMA_card h3 {
+        font-size: 0.85rem;
+    }
+    
+    .DATOS_SISTEMA_card .DATOS_SISTEMA_icon {
+        font-size: 1.2rem;
+    }
+    
+    .DATOS_SISTEMA_card p {
+        font-size: 1rem;
+    }
+    
+    .DATOS_SISTEMA_chart-card canvas {
+        height: 160px;
+    }
+}
+
+/* Animaciones sutiles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.DATOS_SISTEMA_card {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.DATOS_SISTEMA_card:nth-child(2) { animation-delay: 0.1s; }
+.DATOS_SISTEMA_card:nth-child(3) { animation-delay: 0.2s; }
+.DATOS_SISTEMA_card:nth-child(4) { animation-delay: 0.3s; }
+.DATOS_SISTEMA_card:nth-child(5) { animation-delay: 0.4s; }
+
+
+/*Exportar Datos*/
+/* Labels */
+#export-modal label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+#export-modal label:first-of-type {
+    margin-top: 0;
+}
+
+/* Selects */
+#export-modal select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #2d3748;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#export-modal select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #f8faff;
+}
+
+#export-modal select:hover {
+    border-color: #cbd5e0;
+}
+
+/* Contenedor de período */
+#period-select {
+    background: #f7fafc;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 16px;
+    border-left: 4px solid #667eea;
+}
+
+#period-select label {
+    margin-top: 0;
+    color: #4a5568;
+}
+
+/* Botones */
+#export-modal button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 12px;
+    margin-top: 20px;
+}
+
+/* Botón de exportar */
+#export-confirm {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+#export-confirm:hover {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+    box-shadow: 0 6px 16px rgba(72, 187, 120, 0.4);
+    transform: translateY(-2px);
+}
+
+#export-confirm:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+}
+
+/* Botón de cancelar */
+#export-cancel {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+#export-cancel:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+    color: #2d3748;
+    transform: translateY(-1px);
+}
+
+#export-cancel:active {
+    transform: translateY(0);
+    background: #e2e8f0;
+}
+
+/* Efecto de loading para el botón de exportar */
+#export-confirm.loading {
+    background: #a0aec0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#export-confirm.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #export-modal button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    #export-modal select {
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+}
+
+
+/* =================================
+   SECCIÓN RENTABILIDAD DE PRODUCTOS
+   ================================= */
+
+/* Contenedor principal */
+.profitability-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Header */
+.profitability-header {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+.profitability-header h1 {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+.profitability-header h1::before {
+    content: '💰';
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+.profitability-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    border-radius: 2px;
+}
+
+/* Calculadora principal */
+.product-calculator {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+/* Secciones */
+.product-name-section,
+.ingredients-section,
+.packaging-section,
+.additional-costs-section,
+.production-calculation,
+.results-section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    border-left: 4px solid #f59e0b;
+    position: relative;
+}
+
+.product-name-section {
+    border-left-color: #3b82f6;
+}
+
+.ingredients-section {
+    border-left-color: #10b981;
+}
+
+.packaging-section {
+    border-left-color: #8b5cf6;
+}
+
+.additional-costs-section {
+    border-left-color: #ef4444;
+}
+
+.production-calculation {
+    border-left-color: #f59e0b;
+}
+
+.results-section {
+    border-left-color: #6b7280;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Títulos de secciones */
+.product-name-section h3,
+.ingredients-section h3,
+.packaging-section h3,
+.additional-costs-section h3,
+.production-calculation h3,
+.results-section h3 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-name-section h3::before { content: '🏷️'; }
+.ingredients-section h3::before { content: '🥄'; }
+.packaging-section h3::before { content: '📦'; }
+.additional-costs-section h3::before { content: '💸'; }
+.production-calculation h3::before { content: '⚙️'; }
+.results-section h3::before { content: '📊'; }
+
+/* Inputs generales */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+    color: #2d3748;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    background-color: #fffbeb;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover {
+    border-color: #cbd5e0;
+}
+
+/* Select personalizado */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* Formularios específicos */
+.ingredient-form,
+.packaging-form,
+.additional-cost-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.ingredient-form {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto;
+}
+
+.packaging-form {
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+}
+
+.additional-cost-form {
+    grid-template-columns: 2fr 1fr auto;
+}
+
+.production-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.production-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+/* Botones de agregar */
+#add-ingredient,
+#add-packaging,
+#add-additional-cost {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 44px;
+    margin-bottom: 12px;
+}
+
+#add-ingredient {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+#add-ingredient:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+#add-packaging {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+#add-packaging:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.3);
+}
+
+#add-additional-cost {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+#add-additional-cost:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+}
+
+/* Listas de elementos */
+#ingredients-list,
+#packaging-list,
+#additional-costs-list {
+    margin-top: 16px;
+}
+
+.ingredient-item,
+.packaging-item,
+.additional-cost-item {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #f59e0b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.ingredient-item {
+    border-left-color: #10b981;
+}
+
+.packaging-item {
+    border-left-color: #8b5cf6;
+}
+
+.additional-cost-item {
+    border-left-color: #ef4444;
+}
+
+.ingredient-item:hover,
+.packaging-item:hover,
+.additional-cost-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-item span,
+.packaging-item span,
+.additional-cost-item span {
+    color: #2d3748;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.ingredient-item button,
+.packaging-item button,
+.additional-cost-item button {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ingredient-item button:hover,
+.packaging-item button:hover,
+.additional-cost-item button:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* Sección de resultados */
+.results-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.results-summary h4 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.cost-breakdown,
+.production-summary,
+.profitability-analysis {
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.cost-breakdown {
+    border-left: 4px solid #10b981;
+}
+
+.production-summary {
+    border-left: 4px solid #3b82f6;
+}
+
+.profitability-analysis {
+    border-left: 4px solid #f59e0b;
+}
+
+.cost-breakdown h5,
+.production-summary h5,
+.profitability-analysis h5 {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.cost-breakdown p,
+.production-summary p,
+.profitability-analysis p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.cost-breakdown p strong,
+.production-summary p strong,
+.profitability-analysis p strong {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+@media (max-width: 1024px) {
+    .ingredient-form {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .packaging-form {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .additional-cost-form {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profitability-section {
+        padding: 0 4px;
+    }
+    
+    .profitability-header,
+    .product-calculator {
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .profitability-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .product-name-section,
+    .ingredients-section,
+    .packaging-section,
+    .additional-costs-section,
+    .production-calculation,
+    .results-section {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .ingredient-form,
+    .packaging-form,
+    .additional-cost-form {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .production-form {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .ingredient-item,
+    .packaging-item,
+    .additional-cost-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .ingredient-item button,
+    .packaging-item button,
+    .additional-cost-item button {
+        align-self: stretch;
+        text-align: center;
+    }
+    
+    .results-summary {
+        padding: 20px;
+    }
+    
+    .results-summary h4 {
+        font-size: 1.25rem;
+    }
+    
+    .cost-breakdown,
+    .production-summary,
+    .profitability-analysis {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profitability-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .profitability-header h1::before {
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+    
+    .product-name-section h3,
+    .ingredients-section h3,
+    .packaging-section h3,
+    .additional-costs-section h3,
+    .production-calculation h3,
+    .results-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-size: 16px; /* Evita zoom en iOS */
+        padding: 10px 14px;
+    }
+    
+    #add-ingredient,
+    #add-packaging,
+    #add-additional-cost {
+        font-size: 0.8rem;
+        padding: 10px 16px;
+        min-height: 40px;
+    }
+    
+    .ingredient-item span,
+    .packaging-item span,
+    .additional-cost-item span {
+        font-size: 0.85rem;
+    }
+    
+    .results-summary h4 {
+        font-size: 1.1rem;
+    }
+    
+    .cost-breakdown h5,
+    .production-summary h5,
+    .profitability-analysis h5 {
+        font-size: 1rem;
+    }
+    
+    .cost-breakdown p,
+    .production-summary p,
+    .profitability-analysis p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estados de carga para botones */
+#add-ingredient.loading,
+#add-packaging.loading,
+#add-additional-cost.loading {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#add-ingredient.loading::before,
+#add-packaging.loading::before,
+#add-additional-cost.loading::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reducir animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    #add-ingredient,
+    #add-packaging,
+    #add-additional-cost {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    #add-ingredient:hover,
+    #add-packaging:hover,
+    #add-additional-cost:hover {
+        transform: none;
+    }
+    
+    .ingredient-item:hover,
+    .packaging-item:hover,
+    .additional-cost-item:hover {
+        transform: none;
+    }
+}
+
+
+
+
+/* =================================
+   ESTILOS PARA CENTRO DE AYUDA
+   ================================= */
+
+/* Contenedor principal de ayuda */
+.help-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+/* =================================
+   HEADER DE AYUDA (Igual que welcome-section)
+   ================================= */
+.welcome-section {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+.welcome-section h1 {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* =================================
+   CONTENIDO DE AYUDA
+   ================================= */
+.help-content {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+.help-content h2 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.help-content h3 {
+    color: #374151;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 32px 0 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.help-content h3::before {
+    content: '📋';
+    font-size: 1rem;
+}
+
+.help-content p {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.help-content strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* =================================
+   LISTAS DE AYUDA
+   ================================= */
+.help-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.help-content ul li {
+    background: rgba(243, 244, 246, 0.5);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-left: 4px solid #3b82f6;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.help-content ul li:hover {
+    background: rgba(243, 244, 246, 0.8);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.help-content ul li::before {
+    content: '•';
+    color: #3b82f6;
+    font-weight: bold;
+    position: absolute;
+    left: -8px;
+}
+
+/* Sub-listas anidadas */
+.help-content ul ul {
+    margin: 12px 0 0 16px;
+    padding-left: 0;
+}
+
+.help-content ul ul li {
+    background: rgba(249, 250, 251, 0.8);
+    border-left: 3px solid #10b981;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.help-content ul ul li:hover {
+    background: rgba(249, 250, 251, 1);
+    box-shadow: 0 1px 4px rgba(16, 185, 129, 0.1);
+}
+
+.help-content ul ul li::before {
+    content: '→';
+    color: #10b981;
+}
+
+/* =================================
+   NOTAS ESPECIALES
+   ================================= */
+.help-content p strong:first-child {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =================================
+   INFORMACIÓN ADICIONAL
+   ================================= */
+.help-content h3:last-of-type {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.help-content h3:last-of-type::before {
+    content: 'ℹ️';
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+@media (max-width: 1024px) {
+    .help-content {
+        padding: 28px;
+    }
+    
+    .help-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .help-content h3 {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .help-section {
+        padding: 0 4px;
+    }
+    
+    .welcome-section,
+    .help-content {
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .help-content {
+        padding: 24px;
+    }
+    
+    .help-content h2 {
+        font-size: 1.25rem;
+    }
+    
+    .help-content h3 {
+        font-size: 1.1rem;
+        margin: 28px 0 12px 0;
+    }
+    
+    .help-content p {
+        font-size: 0.95rem;
+    }
+    
+    .help-content ul li {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .help-content ul ul li {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-section,
+    .help-content {
+        padding: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 1.25rem;
+    }
+    
+    .welcome-section p {
+        font-size: 0.9rem;
+    }
+    
+    .help-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .help-content h3 {
+        font-size: 1rem;
+        gap: 6px;
+    }
+    
+    .help-content h3::before {
+        font-size: 0.9rem;
+    }
+    
+    .help-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .help-content ul li {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .help-content ul ul {
+        margin-left: 12px;
+    }
+    
+    .help-content ul ul li {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .help-content p strong:first-child {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+}
+
+/* =================================
+   ANIMACIONES Y TRANSICIONES
+   ================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reducir animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .help-content ul li:hover {
+        transform: none;
+    }
+    
+    .help-content ul ul li:hover {
+        transform: none;
+    }
+    
+    .help-section {
+        animation: none;
+    }
+}
