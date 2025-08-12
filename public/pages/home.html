@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Iniciar Sesión | Registro</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <!-- Login Form -->
+            <div id="login-form" class="form-container active">
+                <div class="form-header">
+                    <h2 class="form-title">Iniciar Sesión</h2>
+                    <p class="form-subtitle">Accede a tu cuenta</p>
+                </div>
+                
+                <form class="auth-form">
+                    <div class="input-group">
+                        <label for="login-email">Correo Electrónico</label>
+                        <input type="email" id="login-email" name="email" required>
+                        <span class="input-icon">📧</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" name="password" required>
+                        <span class="input-icon"></span>
+                        <button type="button" class="toggle-password" data-target="login-password">👁️</button>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn login-btn">Iniciar Sesión</button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+                </div>
+            </div>
+            
+            <!-- Register Form -->
+            <div id="register-form" class="form-container">
+                <div class="form-header">
+                    <h2 class="form-title">Crear Cuenta</h2>
+                    <p class="form-subtitle">Únete a nosotros</p>
+                </div>
+                
+                <form class="auth-form">
+                    <div class="input-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" name="fullName" required>
+                        <span class="input-icon">👤</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="register-email">Correo Electrónico</label>
+                        <input type="email" id="register-email" name="email" required>
+                        <span class="input-icon">📧</span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" name="password" required>
+                        <span class="input-icon"></span>
+                        <button type="button" class="toggle-password" data-target="register-password">👁️</button>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="register-confirm-password">Verificar Contraseña</label>
+                        <input type="password" id="register-confirm-password" name="confirmPassword" required>
+                        <span class="input-icon"></span>
+                        <button type="button" class="toggle-password" data-target="register-confirm-password">👁️</button>
+                        <div id="password-match-indicator" class="password-indicator"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn register-btn">Crear Cuenta</button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>¿Ya tienes cuenta? <a href="#" id="show-login">Inicia Sesión</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="/js/login.js"></script>
+    <script src="/js/register.js"></script>
+     <script src="/js/home.js"></script>
+
+</body>
+</html>

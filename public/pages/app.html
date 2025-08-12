@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistema de Facturación</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/dashobard.css">
+    <link rel="stylesheet" href="/css/productos.css">
+    <link rel="stylesheet" href="/css/inventario.css">
+    <link rel="stylesheet" href="/css/facturacion.css">
+    <link rel="stylesheet" href="/css/gestion.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+</head>
+<body>
+
+    <!-- Overlay de Animación Multi-Etapa -->
+    <div id="animation-overlay">
+        <!-- Etapa 1: Bienvenida -->
+        <div class="animation-stage" id="stage-1">
+            <div class="animation-container">
+                <div class="welcome-icon">🎉</div>
+                <h1 class="animation-title">¡Hola!</h1>
+                <p class="animation-message">
+                    Gracias por confiar en nosotros para llevar la facturación de tu tienda
+                </p>
+                <div class="progress-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etapa 2: Funcionalidades -->
+        <div class="animation-stage" id="stage-2">
+            <div class="animation-container">
+                <div class="welcome-icon">📊</div>
+                <h1 class="animation-title">Tu Panel de Control</h1>
+                <p class="animation-message">
+                    Aquí podrás gestionar tus productos, inventariado, facturas y mucho más
+                </p>
+                <div class="feature-list">
+                    <div class="feature-item">✅ Gestión de Productos</div>
+                    <div class="feature-item">✅ Control de Inventario</div>
+                    <div class="feature-item">✅ Facturación Rápida</div>
+                </div>
+                <div class="progress-dots">
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etapa 3: Ayuda y Contacto -->
+        <div class="animation-stage" id="stage-3">
+            <div class="animation-container">
+                <div class="welcome-icon">💬</div>
+                <h1 class="animation-title">¿Necesitas Ayuda?</h1>
+                <p class="animation-message">
+                    Si tienes dudas, puedes ir a <strong>"Ayuda"</strong> en la barra de navegación para ponerte en contacto
+                </p>
+                <div class="contact-info">
+                    <p>📞 <strong></strong></p>
+                    <p>Estamos aquí para ayudarte</p>
+                </div>
+                <div class="progress-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                </div>
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+
+            <!-- Botón móvil añadido directamente en el HTML -->
+        <button class="mobile-menu-btn">☰</button>
+        <div class="sidebar-overlay"></div>
+
+
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <h2>Sistema de Facturación</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#inventario">Inventario</a></li>
+                    <li><a href="#facturas">Facturas</a></li>
+                    <li><a href="#gestion">Gestión</a></li>
+                    <li><a href="#ayuda">Ayuda</a></li>
+                    <li><a href="#salir">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+
+         <!-- Hacer este contenido dinamico -->
+        <main class="main-dashboard">
+            <div class="welcome-section">
+                <h1>¡Bienvenido a tu Sistema de Facturación!</h1>
+                <p>Gestiona tu tienda de manera eficiente y profesional</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">📦</div>
+                    <h3>Productos</h3>
+                    <p>Gestiona tu catálogo de productos</p>
+                    <button class="btn-primary">Ver Productos</button>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Inventario</h3>
+                    <p>Controla tu stock en tiempo real</p>
+                    <button class="btn-primary">Ver Inventario</button>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🧾</div>
+                    <h3>Facturas</h3>
+                    <p>Crea y gestiona tus facturas</p>
+                    <button class="btn-primary">Nueva Factura</button>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">📈</div>
+                    <h3>Reportes</h3>
+                    <p>Analiza tus ventas y tendencias</p>
+                    <button class="btn-primary">Ver Reportes</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="/js/animation.js"></script>
+    <script src="/js/main.js"></script>
+    <script type="module" src="./utils/grafics.js"></script>
+</body>
+</html>

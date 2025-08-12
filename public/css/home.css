@@ -1,0 +1,408 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.auth-wrapper {
+    background: rgba(255, 255, 255, 0.85); /* Cambiado a un tono más opaco */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+.form-container {
+    padding: 40px 35px;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-container.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header del formulario */
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-subtitle {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Formularios */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px; /* Mantener esta altura mínima */
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.input-group input {
+    padding: 15px 50px 15px 15px; /* Asegurar suficiente padding a la derecha */
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    height: 48px; /* Set a fixed height for the input to ensure consistent centering */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px var(--primary-shadow);
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 60%; /* Cambiado de 50% a 60% para bajar el ícono */
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    pointer-events: none;
+    z-index: 1;
+    color: #888;
+    transition: all 0.3s ease;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 60%; /* Cambiado de 50% a 60% para bajar el botón */
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    z-index: 2;
+    color: #888;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores específicos para Login */
+#login-form {
+    --primary-color: #4f46e5;
+    --primary-shadow: rgba(79, 70, 229, 0.15);
+    --gradient-start: #4f46e5;
+    --gradient-end: #7c3aed;
+}
+
+#login-form .form-title {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #4338ca, #6b21a8);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Estilo para el botón de login deshabilitado */
+.login-btn:disabled {
+    background: linear-gradient(135deg, #a3a3a3, #737373);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Colores específicos para Register */
+#register-form {
+    --primary-color: #059669;
+    --primary-shadow: rgba(5, 150, 105, 0.15);
+    --gradient-start: #059669;
+    --gradient-end: #0d9488;
+}
+
+#register-form .form-title {
+    background: linear-gradient(135deg, #059669, #0d9488);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.register-btn {
+    background: linear-gradient(135deg, #059669, #0d9488);
+    color: white;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #047857, #0f766e);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
+}
+
+/* Botones */
+.submit-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer del formulario */
+.form-footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.form-footer p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.form-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Indicador de coincidencia de contraseñas */
+.password-indicator {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.password-indicator.show {
+    display: block;
+}
+
+.password-indicator.match {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.password-indicator.no-match {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+/* Estados de error */
+.input-group.error input {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.input-group.error input:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Estados de éxito */
+.input-group.success input {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+.input-group {
+    padding-bottom: 5px; /* Espacio para el mensaje de error */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+    
+    .form-container {
+        padding: 28px 22px;
+    }
+    
+    .form-title {
+        font-size: 1.75rem;
+    }
+    
+    .input-group {
+        min-height: 72px;
+    }
+    
+    .input-group input {
+        padding: 11px 36px 11px 11px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+    
+    .submit-btn {
+        padding: 11px 22px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    
+    /* Iconos más compactos en móvil */
+    .input-icon {
+        font-size: 0.95rem;
+        right: 11px;
+    }
+    
+    .toggle-password {
+        font-size: 0.9rem;
+        right: 11px;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-container {
+        padding: 24px 18px;
+    }
+    
+    .form-title {
+        font-size: 1.55rem;
+    }
+    
+    .auth-form {
+        gap: 18px;
+    }
+    
+    .input-group {
+        min-height: 68px;
+    }
+    
+    .input-group input {
+        padding: 10px 32px 10px 10px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+    
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+    
+    /* Iconos ultra compactos */
+    .input-icon {
+        font-size: 0.85rem;
+        right: 9px;
+    }
+    
+    .toggle-password {
+        font-size: 0.8rem;
+        right: 9px;
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .form-container,
+    .submit-btn,
+    .input-group input,
+    .toggle-password {
+        animation: none;
+        transition: none;
+    }
+}
